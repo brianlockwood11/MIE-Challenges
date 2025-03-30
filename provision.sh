@@ -1,66 +1,69 @@
 #!/usr/bin/env bash
 
-if [ "$1" == "" ] ; then
-	VER="56"
-else
-	VER="$1"
-fi
+dnf update -y
 
-printf "\nInitializing mysql.sh Version ($VER)...\n\n"
+dnf install -y dhcpd
+dnf install -y syslinux tftp-server tftp 
 
-# NOTE: EPEL repo must be enabled in base.sh script per missing dependency in Percona repo:
-# https://bugs.launchpad.net/percona-xtrabackup/+bug/1526636
-if [[ ! -e /etc/yum.repos.d/epel.repo ]]; then yum -y install http://mirror.pnl.gov/epel/6/x86_64/epel-release-6-8.noarch.rpm; fi
-
-# Install Percona MySQL Repo
-yum install http://www.percona.com/downloads/percona-release/redhat/0.1-3/percona-release-0.1-3.noarch.rpm -y
-# Install Percona MySQL Server, server headers, toolkit and Xtrabackup
-yum install Percona-Server-server-$VER Percona-Server-devel-$VER percona-toolkit percona-xtrabackup -y
-
-# Create mysql dir
-if [[ ! -d /storage/db ]]; then mkdir -p /storage/db && ln -s /storage/db/ /db; fi
-ln -s /var/lib/mysql/ /storage/db/mysql > /dev/null 2>&1
-chown -R mysql:mysql /db/mysql
-
-# Start MySQL Service
-if pidof systemd > /dev/null ; then
-	systemctl enable mysqld
-	systemctl start mysqld
-else
-	chkconfig --add mysql
-	service mysql start
-fi
+nmcli connection add type ethernet con-name eth1 ifname eth1 ipv4.addresses 10.10.100.99/24 ipv4.gateway 10.10.100.1 ipv4.dns 8.8.8.8 ipv4.method manual
+systemctl restart NetworkManager
 
 
-if ! grep password ~/.my.cnf > /dev/null 2>&1
-then
-	printf "Configure desired mysql_secure_installation defaults..."
-	# This is not about local security, it about making sure root can't get attacked remotly easily by guessing no password.
-	# The password is always initially set here and then populated in the ~/.my.cnf file
-	mysql --user=root <<- EOF
-	UPDATE mysql.user SET Password=PASSWORD('Secret1') WHERE User='root';
-	DELETE FROM mysql.user WHERE User='';
-	DELETE FROM mysql.user WHERE User='root' AND Host NOT IN ('localhost', '127.0.0.1', '::1');
-	DROP DATABASE IF EXISTS test;
-	DELETE FROM mysql.db WHERE Db='test' OR Db='test\\_%';
-	FLUSH PRIVILEGES;
-	EOF
+sudo cp /usr/lib/systemd/system/tftp.service /etc/systemd/system/tftp-server.service
+sudo cp /usr/lib/systemd/system/tftp.socket /etc/systemd/system/tftp-server.socket
 
-	# ~/.my.cnf should never be there already when this script runs - it always initializes the mysql install
-	printf "\nSetting up .my.cnf..."
-	printf "
-	[client]
-	password=Secret1" >> ~/.my.cnf
-
-	printf "
-	[client]
-	password=Secret1" >> /home/vagrant/.my.cnf
-
-	printf "Done.\n"
-fi
+cat <<EOF > /etc/dhcp/dhcpd.conf
+# DHCP Server Configuration File
+default-lease-time 600;
+max-lease-time 7200;
 
 
-yum install -y httpd
-sudo systemctl start  httpd.service
+subnet 10.10.100.0 netmask 255.255.255.0 {
+  authoritative;
+  interface eth1;
+  range 10.10.100.100 10.10.100.200;
+  option routers 10.10.100.1;
+  option subnet-mask 255.255.255.0;
+  option domain-name-servers 8.8.8.8, 8.8.4.4;
+  option domain-name "mie.local";
+  next-server 10.10.100.99;
+  filename "netboot.xyz.kpxe";
+}
+EOF
 
-echo "You should be able to reach http://localhost:8080/ now   (unless the port was redirected.)"
+cat <<EOF > /etc/sysconfig/dhcpd
+DHCPDARGS=eth1;
+EOF
+
+cat <<EOF > /etc/systemd/system/tftp-server.service
+[Unit]
+Description=Tftp Server
+Requires=tftp-server.socket
+Documentation=man:in.tftpd
+
+[Service]
+ExecStart=/usr/sbin/in.tftpd -c -p -s /var/lib/tftpboot
+StandardInput=socket
+
+[Install]
+WantedBy=multi-user.target
+Also=tftp-server.socket
+EOF
+
+
+
+mkdir -p /var/lib/tftpboot
+cd /var/lib/tftpboot
+wget -P /var/lib/tftpboot https://boot.netboot.xyz/ipxe/netboot.xyz.kpxe
+chmod 777 /var/lib/tftpboot
+
+systemctl daemon-reload
+systemctl enable tftp-server
+systemctl start tftp-server 
+systemctl enable dhcpd
+systemctl start dhcpd
+
+
+
+
+systemctl restart dhcpd
