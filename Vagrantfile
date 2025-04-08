@@ -12,8 +12,9 @@ Vagrant.configure(2) do |config|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://atlas.hashicorp.com/search.
-  config.vm.box = "bento/fedora-41"
-  config.vm.hostname = "fedora-41"
+  config.vm.box = "rockylinux/9"
+  config.vm.hostname = "rocky"
+  config.vm.box_version = "5.0.0"
   if Vagrant.has_plugin?("vagrant-cachier")
     config.cache.scope = :box
     config.cache.enable :yum
@@ -21,13 +22,21 @@ Vagrant.configure(2) do |config|
   #config.vm.boot_timeout
   #config.vm.network "forwarded_port", guest: 80, host: 8080, auto_correct: true
   config.vm.network "forwarded_port", guest: 80, host: 8080, auto_correct: true
+  config.vm.network "forwarded_port", guest: 3000, host: 3000, auto_correct: true
   config.vm.provision "shell", path: "provision.sh"
   
   # Configure network settings
   #config.vm.network "private_network", ip: "192.168.56.10"
   #config.vm.network "public_network"
-  config.vm.network "private_network", ip: "10.10.100.99", netmask: "255.255.255.0", gateway: "10.10.100.1", type: "static", :adapter => 2
+  config.vm.network "private_network", ip: "10.10.100.99" #, netmask: "255.255.255.0", gateway: "10.10.100.1", type: "static"
+    virtualbox__intnet = "true"
 
+  #config.vm.provision "shell", inline: <<-SHELL
+  #  nmcli connection add type ethernet con-name eth1 ifname eth1 ipv4.addresses 10.10.100.99/24 ipv4.gateway 10.10.100.1 ipv4.dns 8.8.8.8 ipv4.method manual
+  #  systemctl restart NetworkManager
+  #  sleep 120
+  #  nmcli connection up eth1
+  #SHELL
 
 
   config.vm.provider "virtualbox" do |vb|
