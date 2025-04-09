@@ -1,0 +1,387 @@
+Bringing machine 'default' up with 'virtualbox' provider...
+==> default: Importing base box 'bento/fedora-41'...
+
+[KProgress: 10%
+[K==> default: Matching MAC address for NAT networking...
+==> default: Checking if box 'bento/fedora-41' version '202502.21.0' is up to date...
+==> default: Setting the name of the VM: linuxtest_default_1743272620957_27027
+==> default: Clearing any previously set network interfaces...
+==> default: Preparing network interfaces based on configuration...
+    default: Adapter 1: nat
+==> default: Forwarding ports...
+    default: 80 (guest) => 8080 (host) (adapter 1)
+    default: 9200 (guest) => 9200 (host) (adapter 1)
+    default: 22 (guest) => 2222 (host) (adapter 1)
+==> default: Running 'pre-boot' VM customizations...
+==> default: Booting VM...
+==> default: Waiting for machine to boot. This may take a few minutes...
+    default: SSH address: 127.0.0.1:2222
+    default: SSH username: vagrant
+    default: SSH auth method: private key
+    default: 
+    default: Vagrant insecure key detected. Vagrant will automatically replace
+    default: this with a newly generated keypair for better security.
+    default: 
+    default: Inserting generated public key within guest...
+==> default: Machine booted and ready!
+==> default: Checking for guest additions in VM...
+==> default: Setting hostname...
+==> default: Mounting shared folders...
+    default: C:/Users/admin/Desktop/Personal/MIE Project - Redmine/linuxtest => /vagrant
+==> default: Running provisioner: shell...
+    default: Running: C:/Users/admin/AppData/Local/Temp/vagrant-shell20250329-157660-frs9xf.sh
+    default: Updating and loading repositories:
+    default:  Fedora 41 openh264 (From Cisco) - x86_ 100% |   6.1 KiB/s |   4.8 KiB |  00m01s
+    default:  Fedora 41 - x86_64 - Updates           100% |  15.3 MiB/s |  11.9 MiB |  00m01s
+    default:  Fedora 41 - x86_64                     100% |  11.8 MiB/s |  35.4 MiB |  00m03s
+    default: Repositories loaded.
+    default: Package                                    Arch   Version           Repository      Size
+    default: Upgrading:
+    default:  NetworkManager                            x86_64 1:1.50.3-1.fc41   updates      5.7 MiB
+    default:    replacing NetworkManager                x86_64 1:1.50.2-1.fc41   updates      5.7 MiB
+    default:  NetworkManager-libnm                      x86_64 1:1.50.3-1.fc41   updates      9.9 MiB
+    default:    replacing NetworkManager-libnm          x86_64 1:1.50.2-1.fc41   updates      9.9 MiB
+    default:  dnf5                                      x86_64 5.2.12.0-1.fc41   updates      2.2 MiB
+    default:    replacing dnf5                          x86_64 5.2.10.0-2.fc41   updates      2.2 MiB
+    default:  dnf5-plugins                              x86_64 5.2.12.0-1.fc41   updates      1.2 MiB
+    default:    replacing dnf5-plugins                  x86_64 5.2.10.0-2.fc41   updates      1.2 MiB
+    default:  elfutils-debuginfod-client                x86_64 0.192-9.fc41      updates     84.2 KiB
+    default:    replacing elfutils-debuginfod-client    x86_64 0.192-7.fc41      updates     81.4 KiB
+    default:  elfutils-default-yama-scope               noarch 0.192-9.fc41      updates      1.8 KiB
+    default:    replacing elfutils-default-yama-scope   noarch 0.192-7.fc41      updates      1.8 KiB
+    default:  elfutils-libelf                           x86_64 0.192-9.fc41      updates      1.2 MiB
+    default:    replacing elfutils-libelf               x86_64 0.192-7.fc41      updates      1.2 MiB
+    default:  elfutils-libs                             x86_64 0.192-9.fc41      updates    670.2 KiB
+    default:    replacing elfutils-libs                 x86_64 0.192-7.fc41      updates    654.9 KiB
+    default:  exfatprogs                                x86_64 1.2.8-1.fc41      updates    255.5 KiB
+    default:    replacing exfatprogs                    x86_64 1.2.7-1.fc41      updates    255.5 KiB
+    default:  expat                                     x86_64 2.7.0-1.fc41      updates    296.9 KiB
+    default:    replacing expat                         x86_64 2.6.4-1.fc41      updates    292.9 KiB
+    default:  fedora-release                            noarch 41-31             updates      0.0   B
+    default:    replacing fedora-release                noarch 41-29             updates      0.0   B
+    default:  fedora-release-common                     noarch 41-31             updates     19.7 KiB
+    default:    replacing fedora-release-common         noarch 41-29             updates     19.7 KiB
+    default:  fedora-release-identity-basic             noarch 41-31             updates    682.0   B
+    default:    replacing fedora-release-identity-basic noarch 41-29             updates    682.0   B
+    default:  fwupd                                     x86_64 1.9.29-1.fc41     updates      7.5 MiB
+    default:    replacing fwupd                         x86_64 1.9.28-1.fc41     updates      7.5 MiB
+    default:  glib2                                     x86_64 2.82.5-1.fc41     updates     14.7 MiB
+    default:    replacing glib2                         x86_64 2.82.2-1.fc41     updates     14.7 MiB
+    default:  glibc                                     x86_64 2.40-23.fc41      updates      6.7 MiB
+    default:    replacing glibc                         x86_64 2.40-21.fc41      updates      6.7 MiB
+    default:  glibc-common                              x86_64 2.40-23.fc41      updates      1.0 MiB
+    default:    replacing glibc-common                  x86_64 2.40-21.fc41      updates      1.0 MiB
+    default:  glibc-gconv-extra                         x86_64 2.40-23.fc41      updates      7.9 MiB
+    default:    replacing glibc-gconv-extra             x86_64 2.40-21.fc41      updates      7.9 MiB
+    default:  glibc-langpack-en                         x86_64 2.40-23.fc41      updates      5.7 MiB
+    default:    replacing glibc-langpack-en             x86_64 2.40-21.fc41      updates      5.7 MiB
+    default:  grub2-common                              noarch 1:2.12-20.fc41    updates      6.1 MiB
+    default:    replacing grub2-common                  noarch 1:2.12-15.fc41    updates      6.1 MiB
+    default:  grub2-pc                                  x86_64 1:2.12-20.fc41    updates     31.0   B
+    default:    replacing grub2-pc                      x86_64 1:2.12-15.fc41    updates     31.0   B
+    default:  grub2-pc-modules                          noarch 1:2.12-20.fc41    updates      3.2 MiB
+    default:    replacing grub2-pc-modules              noarch 1:2.12-15.fc41    updates      3.2 MiB
+    default:  grub2-tools                               x86_64 1:2.12-20.fc41    updates      7.7 MiB
+    default:    replacing grub2-tools                   x86_64 1:2.12-15.fc41    updates      7.7 MiB
+    default:  grub2-tools-minimal                       x86_64 1:2.12-20.fc41    updates      3.0 MiB
+    default:    replacing grub2-tools-minimal           x86_64 1:2.12-15.fc41    updates      3.0 MiB
+    default:  json-glib                                 x86_64 1.10.6-1.fc41     updates    565.5 KiB
+    default:    replacing json-glib                     x86_64 1.10.0-1.fc41     anaconda   558.2 KiB
+    default:  libdnf5                                   x86_64 5.2.12.0-1.fc41   updates      3.6 MiB
+    default:    replacing libdnf5                       x86_64 5.2.10.0-2.fc41   updates      3.5 MiB
+    default:  libdnf5-cli                               x86_64 5.2.12.0-1.fc41   updates    883.4 KiB
+    default:    replacing libdnf5-cli                   x86_64 5.2.10.0-2.fc41   updates    878.8 KiB
+    default:  libidn2                                   x86_64 2.3.8-1.fc41      updates    556.6 KiB
+    default:    replacing libidn2                       x86_64 2.3.7-2.fc41      anaconda   329.1 KiB
+    default:  libxml2                                   x86_64 2.12.10-1.fc41    updates      1.7 MiB
+    default:    replacing libxml2                       x86_64 2.12.9-1.fc41     updates      1.7 MiB
+    default:  libxmlb                                   x86_64 0.3.22-1.fc41     updates    288.6 KiB
+    default:    replacing libxmlb                       x86_64 0.3.21-1.fc41     updates    288.6 KiB
+    default:  libzstd                                   x86_64 1.5.7-1.fc41      updates    804.0 KiB
+    default:    replacing libzstd                       x86_64 1.5.6-2.fc41      anaconda   795.9 KiB
+    default:  lua-libs                                  x86_64 5.4.7-3.fc41      updates    285.0 KiB
+    default:    replacing lua-libs                      x86_64 5.4.6-6.fc41      anaconda   285.0 KiB
+    default:  nspr                                      x86_64 4.36.0-4.fc41     updates    320.4 KiB
+    default:    replacing nspr                          x86_64 4.36.0-3.fc41     updates    320.4 KiB
+    default:  nss                                       x86_64 3.109.0-1.fc41    updates      1.9 MiB
+    default:    replacing nss                           x86_64 3.108.0-1.fc41    updates      1.9 MiB
+    default:  nss-softokn                               x86_64 3.109.0-1.fc41    updates      1.9 MiB
+    default:    replacing nss-softokn                   x86_64 3.108.0-1.fc41    updates      1.9 MiB
+    default:  nss-softokn-freebl                        x86_64 3.109.0-1.fc41    updates    845.1 KiB
+    default:    replacing nss-softokn-freebl            x86_64 3.108.0-1.fc41    updates    845.1 KiB
+    default:  nss-sysinit                               x86_64 3.109.0-1.fc41    updates     22.2 KiB
+    default:    replacing nss-sysinit                   x86_64 3.108.0-1.fc41    updates     22.2 KiB
+    default:  nss-util                                  x86_64 3.109.0-1.fc41    updates    205.1 KiB
+    default:    replacing nss-util                      x86_64 3.108.0-1.fc41    updates    205.1 KiB
+    default:  pcsc-lite                                 x86_64 2.3.1-1.fc41      updates    221.4 KiB
+    default:    replacing pcsc-lite                     x86_64 2.3.0-1.fc41      anaconda   220.1 KiB
+    default:  pcsc-lite-libs                            x86_64 2.3.1-1.fc41      updates     68.1 KiB
+    default:    replacing pcsc-lite-libs                x86_64 2.3.0-1.fc41      anaconda    68.0 KiB
+    default:  rpm                                       x86_64 4.20.1-1.fc41     updates      3.1 MiB
+    default:    replacing rpm                           x86_64 4.20.0-1.fc41     anaconda     3.1 MiB
+    default:  rpm-build-libs                            x86_64 4.20.1-1.fc41     updates    210.7 KiB
+    default:    replacing rpm-build-libs                x86_64 4.20.0-1.fc41     anaconda   206.7 KiB
+    default:  rpm-libs                                  x86_64 4.20.1-1.fc41     updates    730.0 KiB
+    default:    replacing rpm-libs                      x86_64 4.20.0-1.fc41     anaconda   725.9 KiB
+    default:  rpm-plugin-selinux                        x86_64 4.20.1-1.fc41     updates     16.0 KiB
+    default:    replacing rpm-plugin-selinux            x86_64 4.20.0-1.fc41     anaconda    16.1 KiB
+    default:  selinux-policy                            noarch 41.34-1.fc41      updates     31.6 KiB
+    default:    replacing selinux-policy                noarch 41.33-1.fc41      updates     31.6 KiB
+    default:  selinux-policy-targeted                   noarch 41.34-1.fc41      updates     18.6 MiB
+    default:    replacing selinux-policy-targeted       noarch 41.33-1.fc41      updates     18.7 MiB
+    default:  systemd                                   x86_64 256.12-1.fc41     updates     16.4 MiB
+    default:    replacing systemd                       x86_64 256.11-1.fc41     updates     16.7 MiB
+    default:  systemd-libs                              x86_64 256.12-1.fc41     updates      2.0 MiB
+    default:    replacing systemd-libs                  x86_64 256.11-1.fc41     updates      2.0 MiB
+    default:  systemd-pam                               x86_64 256.12-1.fc41     updates      1.1 MiB
+    default:    replacing systemd-pam                   x86_64 256.11-1.fc41     updates      1.1 MiB
+    default:  systemd-resolved                          x86_64 256.12-1.fc41     updates    671.1 KiB
+    default:    replacing systemd-resolved              x86_64 256.11-1.fc41     updates    661.4 KiB
+    default:  systemd-udev                              x86_64 256.12-1.fc41     updates     12.0 MiB
+    default:    replacing systemd-udev                  x86_64 256.11-1.fc41     updates     11.9 MiB
+    default:  vim-common                                x86_64 2:9.1.1227-1.fc41 updates     37.8 MiB
+    default:    replacing vim-common                    x86_64 2:9.1.1081-1.fc41 updates     37.6 MiB
+    default:  vim-data                                  noarch 2:9.1.1227-1.fc41 updates     10.3 KiB
+    default:    replacing vim-data                      noarch 2:9.1.1081-1.fc41 updates     10.3 KiB
+    default:  vim-default-editor                        noarch 2:9.1.1227-1.fc41 updates    505.0   B
+    default:    replacing vim-default-editor            noarch 2:9.1.1081-1.fc41 updates    505.0   B
+    default:  vim-enhanced                              x86_64 2:9.1.1227-1.fc41 updates      4.0 MiB
+    default:    replacing vim-enhanced                  x86_64 2:9.1.1081-1.fc41 updates      4.0 MiB
+    default:  vim-filesystem                            noarch 2:9.1.1227-1.fc41 updates     40.0   B
+    default:    replacing vim-filesystem                noarch 2:9.1.1081-1.fc41 updates     40.0   B
+    default:  vim-minimal                               x86_64 2:9.1.1227-1.fc41 updates      1.7 MiB
+    default:    replacing vim-minimal                   x86_64 2:9.1.1081-1.fc41 updates      1.7 MiB
+    default:  wget2                                     x86_64 2.2.0-2.fc41      updates      1.0 MiB
+    default:    replacing wget2                         x86_64 2.2.0-1.fc41      updates      1.0 MiB
+    default:  wget2-libs                                x86_64 2.2.0-2.fc41      updates    369.7 KiB
+    default:    replacing wget2-libs                    x86_64 2.2.0-1.fc41      updates    364.7 KiB
+    default:  wget2-wget                                x86_64 2.2.0-2.fc41      updates     42.0   B
+    default:    replacing wget2-wget                    x86_64 2.2.0-1.fc41      updates     42.0   B
+    default:  xxd                                       x86_64 2:9.1.1227-1.fc41 updates     37.4 KiB
+    default:    replacing xxd                           x86_64 2:9.1.1081-1.fc41 updates     37.4 KiB
+    default:  zlib-ng-compat                            x86_64 2.2.3-2.fc41      updates    141.9 KiB
+    default:    replacing zlib-ng-compat                x86_64 2.2.3-1.fc41      updates    138.5 KiB
+    default: Installing:
+    default:  kernel                                    x86_64 6.13.8-200.fc41   updates      0.0   B
+    default: Installing dependencies:
+    default:  kernel-core                               x86_64 6.13.8-200.fc41   updates     75.3 MiB
+    default:  kernel-modules                            x86_64 6.13.8-200.fc41   updates     64.3 MiB
+    default:  kernel-modules-core                       x86_64 6.13.8-200.fc41   updates     37.8 MiB
+    default: 
+    default: Transaction Summary:
+    default:  Installing:         4 packages
+    default:  Upgrading:         62 packages
+    default:  Replacing:         62 packages
+    default: 
+    default: Total size of inbound packages is 178 MiB. Need to download 178 MiB.
+    default: After this operation, 178 MiB extra will be used (install 376 MiB, remove 199 MiB).
+    default: [ 1/66] kernel-0:6.13.8-200.fc41.x86_64 100% | 603.4 KiB/s | 196.7 KiB |  00m00s
+    default: [ 2/66] kernel-core-0:6.13.8-200.fc41.x 100% |   7.8 MiB/s |  18.8 MiB |  00m02s
+    default: [ 3/66] NetworkManager-1:1.50.3-1.fc41. 100% |   8.6 MiB/s |   2.1 MiB |  00m00s
+    default: [ 4/66] NetworkManager-libnm-1:1.50.3-1 100% |   6.9 MiB/s |   1.8 MiB |  00m00s
+    default: [ 5/66] dnf5-0:5.2.12.0-1.fc41.x86_64   100% |   5.8 MiB/s | 829.2 KiB |  00m00s
+    default: [ 6/66] libdnf5-0:5.2.12.0-1.fc41.x86_6 100% |   6.3 MiB/s |   1.2 MiB |  00m00s
+    default: [ 7/66] libdnf5-cli-0:5.2.12.0-1.fc41.x 100% |   3.1 MiB/s | 353.2 KiB |  00m00s
+    default: [ 8/66] dnf5-plugins-0:5.2.12.0-1.fc41. 100% |   3.2 MiB/s | 454.1 KiB |  00m00s
+    default: [ 9/66] elfutils-debuginfod-client-0:0. 100% | 481.8 KiB/s |  46.3 KiB |  00m00s
+    default: [10/66] elfutils-libelf-0:0.192-9.fc41. 100% |   1.9 MiB/s | 207.3 KiB |  00m00s
+    default: [11/66] elfutils-libs-0:0.192-9.fc41.x8 100% |   2.3 MiB/s | 261.8 KiB |  00m00s
+    default: [12/66] elfutils-default-yama-scope-0:0 100% | 133.0 KiB/s |  12.4 KiB |  00m00s
+    default: [13/66] exfatprogs-0:1.2.8-1.fc41.x86_6 100% |   1.0 MiB/s |  96.9 KiB |  00m00s
+    default: [14/66] expat-0:2.7.0-1.fc41.x86_64     100% |   1.1 MiB/s | 115.9 KiB |  00m00s
+    default: [15/66] kernel-modules-0:6.13.8-200.fc4 100% |  15.3 MiB/s |  66.0 MiB |  00m04s
+    default: [16/66] fedora-release-0:41-31.noarch   100% |  76.1 KiB/s |  12.9 KiB |  00m00s
+    default: [17/66] fedora-release-common-0:41-31.n 100% | 273.2 KiB/s |  23.8 KiB |  00m00s
+    default: [18/66] fedora-release-identity-basic-0 100% | 157.9 KiB/s |  13.7 KiB |  00m00s
+    default: [19/66] glib2-0:2.82.5-1.fc41.x86_64    100% |  11.6 MiB/s |   3.0 MiB |  00m00s
+    default: [20/66] fwupd-0:1.9.29-1.fc41.x86_64    100% |   7.3 MiB/s |   2.2 MiB |  00m00s
+    default: [21/66] glibc-common-0:2.40-23.fc41.x86 100% |   3.6 MiB/s | 379.6 KiB |  00m00s
+    default: [22/66] glibc-0:2.40-23.fc41.x86_64     100% |  14.2 MiB/s |   2.2 MiB |  00m00s
+    default: [23/66] glibc-langpack-en-0:2.40-23.fc4 100% |   4.2 MiB/s | 632.9 KiB |  00m00s
+    default: [24/66] glibc-gconv-extra-0:2.40-23.fc4 100% |  11.7 MiB/s |   1.7 MiB |  00m00s
+    default: [25/66] grub2-tools-minimal-1:2.12-20.f 100% |   7.6 MiB/s | 613.3 KiB |  00m00s
+    default: [26/66] grub2-common-1:2.12-20.fc41.noa 100% |   5.7 MiB/s |   1.0 MiB |  00m00s
+    default: [27/66] grub2-tools-1:2.12-20.fc41.x86_ 100% |  12.0 MiB/s |   1.8 MiB |  00m00s
+    default: [28/66] grub2-pc-1:2.12-20.fc41.x86_64  100% | 276.5 KiB/s |  14.9 KiB |  00m00s
+    default: [29/66] grub2-pc-modules-1:2.12-20.fc41 100% |   6.0 MiB/s |   1.1 MiB |  00m00s
+    default: [30/66] json-glib-0:1.10.6-1.fc41.x86_6 100% |   2.9 MiB/s | 161.9 KiB |  00m00s
+    default: [31/66] kernel-modules-core-0:6.13.8-20 100% |   7.7 MiB/s |  39.2 MiB |  00m05s
+    default: [32/66] libidn2-0:2.3.8-1.fc41.x86_64   100% |   1.3 MiB/s | 175.0 KiB |  00m00s
+    default: [33/66] libxml2-0:2.12.10-1.fc41.x86_64 100% |   5.3 MiB/s | 687.5 KiB |  00m00s
+    default: [34/66] libxmlb-0:0.3.22-1.fc41.x86_64  100% |   2.1 MiB/s | 117.6 KiB |  00m00s
+    default: [35/66] lua-libs-0:5.4.7-3.fc41.x86_64  100% |   2.8 MiB/s | 131.5 KiB |  00m00s
+    default: [36/66] libzstd-0:1.5.7-1.fc41.x86_64   100% |   4.3 MiB/s | 315.4 KiB |  00m00s
+    default: [37/66] nspr-0:4.36.0-4.fc41.x86_64     100% |   2.6 MiB/s | 137.0 KiB |  00m00s
+    default: [38/66] nss-0:3.109.0-1.fc41.x86_64     100% |   8.5 MiB/s | 705.4 KiB |  00m00s
+    default: [39/66] nss-util-0:3.109.0-1.fc41.x86_6 100% |   1.6 MiB/s |  86.0 KiB |  00m00s
+    default: [40/66] nss-softokn-0:3.109.0-1.fc41.x8 100% |   4.8 MiB/s | 411.3 KiB |  00m00s
+    default: [41/66] nss-softokn-freebl-0:3.109.0-1. 100% |   5.9 MiB/s | 325.6 KiB |  00m00s
+    default: [42/66] nss-sysinit-0:3.109.0-1.fc41.x8 100% | 466.9 KiB/s |  19.1 KiB |  00m00s
+    default: [43/66] pcsc-lite-0:2.3.1-1.fc41.x86_64 100% |   1.8 MiB/s |  97.0 KiB |  00m00s
+    default: [44/66] pcsc-lite-libs-0:2.3.1-1.fc41.x 100% | 769.3 KiB/s |  32.3 KiB |  00m00s
+    default: [45/66] rpm-plugin-selinux-0:4.20.1-1.f 100% | 462.5 KiB/s |  19.4 KiB |  00m00s
+    default: [46/66] rpm-0:4.20.1-1.fc41.x86_64      100% |   6.2 MiB/s | 549.6 KiB |  00m00s
+    default: [47/66] rpm-libs-0:4.20.1-1.fc41.x86_64 100% |   4.1 MiB/s | 312.0 KiB |  00m00s
+    default: [48/66] rpm-build-libs-0:4.20.1-1.fc41. 100% |   2.2 MiB/s |  98.8 KiB |  00m00s
+    default: [49/66] selinux-policy-0:41.34-1.fc41.n 100% |   1.3 MiB/s |  61.0 KiB |  00m00s
+    default: [50/66] systemd-libs-0:256.12-1.fc41.x8 100% |   5.8 MiB/s | 729.6 KiB |  00m00s
+    default: [51/66] systemd-pam-0:256.12-1.fc41.x86 100% |   4.5 MiB/s | 397.5 KiB |  00m00s
+    default: [52/66] systemd-0:256.12-1.fc41.x86_64  100% |  14.1 MiB/s |   5.5 MiB |  00m00s
+    default: [53/66] systemd-resolved-0:256.12-1.fc4 100% |   4.1 MiB/s | 309.4 KiB |  00m00s
+    default: [54/66] systemd-udev-0:256.12-1.fc41.x8 100% |   9.4 MiB/s |   2.3 MiB |  00m00s
+    default: [55/66] vim-data-2:9.1.1227-1.fc41.noar 100% | 400.5 KiB/s |  18.4 KiB |  00m00s
+    default: [56/66] selinux-policy-targeted-0:41.34 100% |   8.8 MiB/s |   6.8 MiB |  00m01s
+    default: [57/66] vim-enhanced-2:9.1.1227-1.fc41. 100% |   8.7 MiB/s |   1.9 MiB |  00m00s
+    default: [58/66] vim-default-editor-2:9.1.1227-1 100% | 202.9 KiB/s |  14.4 KiB |  00m00s
+    default: [59/66] vim-filesystem-2:9.1.1227-1.fc4 100% | 331.1 KiB/s |  16.2 KiB |  00m00s
+    default: [60/66] vim-minimal-2:9.1.1227-1.fc41.x 100% |   6.3 MiB/s | 830.3 KiB |  00m00s
+    default: [61/66] wget2-libs-0:2.2.0-2.fc41.x86_6 100% |   2.7 MiB/s | 147.6 KiB |  00m00s
+    default: [62/66] wget2-0:2.2.0-2.fc41.x86_64     100% |   4.0 MiB/s | 280.1 KiB |  00m00s
+    default: [63/66] wget2-wget-0:2.2.0-2.fc41.x86_6 100% | 229.1 KiB/s |   9.6 KiB |  00m00s
+    default: [64/66] xxd-2:9.1.1227-1.fc41.x86_64    100% | 718.6 KiB/s |  32.3 KiB |  00m00s
+    default: [65/66] zlib-ng-compat-0:2.2.3-2.fc41.x 100% |   1.6 MiB/s |  78.9 KiB |  00m00s
+    default: [66/66] vim-common-2:9.1.1227-1.fc41.x8 100% |  12.3 MiB/s |   8.2 MiB |  00m01s
+    default: --------------------------------------------------------------------------------
+    default: [66/66] Total                           100% |  25.2 MiB/s | 178.1 MiB |  00m07s
+    default: Running transaction
+    default: [  1/130] Verify package files          100% | 428.0   B/s |  66.0   B |  00m00s
+    default: [  2/130] Prepare transaction           100% | 351.0   B/s | 128.0   B |  00m00s
+    default: [  3/130] Upgrading glibc-common-0:2.40 100% |  12.4 MiB/s |   1.1 MiB |  00m00s
+    default: [  4/130] Upgrading glibc-langpack-en-0 100% |  40.4 MiB/s |   5.8 MiB |  00m00s
+    default: [  5/130] Upgrading glibc-gconv-extra-0 100% |  28.3 MiB/s |   8.0 MiB |  00m00s
+    default: [  6/130] Upgrading glibc-0:2.40-23.fc4 100% |   5.5 MiB/s |   6.7 MiB |  00m01s
+    default: [  7/130] Upgrading zlib-ng-compat-0:2. 100% |  15.5 MiB/s | 142.7 KiB |  00m00s
+    default: [  8/130] Upgrading glib2-0:2.82.5-1.fc 100% |  89.0 MiB/s |  14.7 MiB |  00m00s
+    default: [  9/130] Upgrading systemd-libs-0:256. 100% |  78.1 MiB/s |   2.0 MiB |  00m00s
+    default: [ 10/130] Upgrading systemd-0:256.12-1. 100% |  44.7 MiB/s |  16.5 MiB |  00m00s
+    default: [ 11/130] Upgrading systemd-pam-0:256.1 100% |  90.4 MiB/s |   1.1 MiB |  00m00s
+    default: [ 12/130] Upgrading libzstd-0:1.5.7-1.f 100% | 112.3 MiB/s | 805.1 KiB |  00m00s
+    default: [ 13/130] Upgrading nspr-0:4.36.0-4.fc4 100% |  62.9 MiB/s | 322.3 KiB |  00m00s
+    default: [ 14/130] Upgrading nss-util-0:3.109.0- 100% |  33.5 MiB/s | 206.1 KiB |  00m00s
+    default: [ 15/130] Upgrading grub2-common-1:2.12 100% | 143.0 MiB/s |   6.2 MiB |  00m00s
+    default: [ 16/130] Upgrading elfutils-libelf-0:0 100% |  73.1 MiB/s |   1.2 MiB |  00m00s
+    default: [ 17/130] Upgrading systemd-udev-0:256. 100% |  19.1 MiB/s |  12.0 MiB |  00m01s
+    default: [ 18/130] Installing kernel-modules-cor 100% |  28.8 MiB/s |  38.4 MiB |  00m01s
+    default: [ 19/130] Installing kernel-core-0:6.13 100% |  69.4 MiB/s |  27.7 MiB |  00m00s
+    default: [ 20/130] Upgrading libidn2-0:2.3.8-1.f 100% |  23.9 MiB/s | 562.8 KiB |  00m00s
+    default: [ 21/130] Upgrading lua-libs-0:5.4.7-3. 100% |  46.6 MiB/s | 286.2 KiB |  00m00s
+    default: [ 22/130] Upgrading rpm-libs-0:4.20.1-1 100% |  89.3 MiB/s | 731.5 KiB |  00m00s
+    default: [ 23/130] Upgrading vim-data-2:9.1.1227 100% |   1.2 MiB/s |  11.4 KiB |  00m00s
+    default: [ 24/130] Upgrading wget2-libs-0:2.2.0- 100% |  45.3 MiB/s | 371.0 KiB |  00m00s
+    default: [ 25/130] Upgrading wget2-0:2.2.0-2.fc4 100% |  40.6 MiB/s |   1.1 MiB |  00m00s
+    default: [ 26/130] Installing kernel-modules-0:6 100% |  14.5 MiB/s |  64.7 MiB |  00m04s
+    default: [ 27/130] Upgrading grub2-tools-minimal 100% |  53.4 MiB/s |   3.0 MiB |  00m00s
+    default: [ 28/130] Upgrading grub2-tools-1:2.12- 100% | 112.0 MiB/s |   7.7 MiB |  00m00s
+    default: [ 29/130] Upgrading grub2-pc-modules-1: 100% |  29.5 MiB/s |   3.2 MiB |  00m00s
+    default: [ 30/130] Upgrading nss-softokn-freebl- 100% |  75.2 MiB/s | 847.3 KiB |  00m00s
+    default: [ 31/130] Upgrading nss-softokn-0:3.109 100% | 104.8 MiB/s |   1.9 MiB |  00m00s
+    default: [ 32/130] Upgrading nss-0:3.109.0-1.fc4 100% |  60.7 MiB/s |   1.9 MiB |  00m00s
+    default: [ 33/130] Upgrading nss-sysinit-0:3.109 100% |   2.5 MiB/s |  23.3 KiB |  00m00s
+    default: [ 34/130] Upgrading libxmlb-0:0.3.22-1. 100% |  40.6 MiB/s | 290.9 KiB |  00m00s
+    default: [ 35/130] Upgrading NetworkManager-libn 100% | 124.3 MiB/s |   9.9 MiB |  00m00s
+    default: [ 36/130] Upgrading json-glib-0:1.10.6- 100% |  19.4 MiB/s | 577.3 KiB |  00m00s
+    default: [ 37/130] Upgrading libxml2-0:2.12.10-1 100% | 122.9 MiB/s |   1.7 MiB |  00m00s
+    default: [ 38/130] Upgrading libdnf5-0:5.2.12.0- 100% | 104.7 MiB/s |   3.6 MiB |  00m00s
+    default: [ 39/130] Upgrading libdnf5-cli-0:5.2.1 100% |  66.7 MiB/s | 887.3 KiB |  00m00s
+    default: [ 40/130] Upgrading dnf5-0:5.2.12.0-1.f 100% |  39.7 MiB/s |   2.3 MiB |  00m00s
+    default: [ 41/130] Upgrading pcsc-lite-libs-0:2. 100% |   5.2 MiB/s |  69.5 KiB |  00m00s
+    default: [ 42/130] Upgrading xxd-2:9.1.1227-1.fc 100% |   6.3 MiB/s |  38.5 KiB |  00m00s
+    default: [ 43/130] Upgrading selinux-policy-0:41 100% |   5.5 KiB/s |  33.2 KiB |  00m06s
+    default: [ 44/130] Upgrading selinux-policy-targ 100% |  49.9 MiB/s |  14.8 MiB |  00m00s
+    default: [ 45/130] Upgrading vim-filesystem-2:9. 100% | 471.9 KiB/s |   4.7 KiB |  00m00s
+    default: [ 46/130] Upgrading vim-common-2:9.1.12 100% |  50.9 MiB/s |  38.2 MiB |  00m01s
+    default: [ 47/130] Upgrading vim-enhanced-2:9.1. 100% | 336.8 MiB/s |   4.0 MiB |  00m00s
+    default: [ 48/130] Upgrading fedora-release-iden 100% | 306.0 KiB/s | 940.0   B |  00m00s
+    default: [ 49/130] Upgrading fedora-release-comm 100% |   3.3 MiB/s |  24.0 KiB |  00m00s
+    default: [ 50/130] Upgrading fedora-release-0:41 100% |  30.3 KiB/s | 124.0   B |  00m00s
+    default: [ 51/130] Upgrading elfutils-default-ya 100% | 185.7 KiB/s |   2.0 KiB |  00m00s
+    default: [ 52/130] Upgrading elfutils-libs-0:0.1 100% |  46.9 MiB/s | 672.1 KiB |  00m00s
+    default: [ 53/130] Upgrading rpm-build-libs-0:4. 100% |   0.0   B/s | 211.5 KiB |  00m00s
+    default: [ 54/130] Upgrading dnf5-plugins-0:5.2. 100% |  32.0 MiB/s |   1.2 MiB |  00m00s
+    default: [ 55/130] Upgrading elfutils-debuginfod 100% |   9.4 MiB/s |  86.5 KiB |  00m00s
+    default: [ 56/130] Upgrading vim-default-editor- 100% | 152.3 KiB/s |   1.2 KiB |  00m00s
+    default: [ 57/130] Upgrading pcsc-lite-0:2.3.1-1 100% |  10.5 MiB/s | 225.1 KiB |  00m00s
+    default: [ 58/130] Upgrading fwupd-0:1.9.29-1.fc 100% |  21.7 MiB/s |   7.5 MiB |  00m00s
+    default: [ 59/130] Upgrading NetworkManager-1:1. 100% |  16.7 MiB/s |   5.7 MiB |  00m00s
+    default: [ 60/130] Upgrading grub2-pc-1:2.12-20. 100% |  92.4 KiB/s | 568.0   B |  00m00s
+    default: [ 61/130] Installing kernel-0:6.13.8-20 100% |   0.0   B/s | 124.0   B |  00m00s
+    default: [ 62/130] Upgrading wget2-wget-0:2.2.0- 100% |  72.3 KiB/s | 444.0   B |  00m00s
+    default: [ 63/130] Upgrading vim-minimal-2:9.1.1 100% |  84.1 MiB/s |   1.7 MiB |  00m00s
+    default: [ 64/130] Upgrading rpm-0:4.20.1-1.fc41 100% | 167.5 MiB/s |   2.5 MiB |  00m00s
+    default: [ 65/130] Upgrading rpm-plugin-selinux- 100% | 333.3 KiB/s |  17.0 KiB |  00m00s
+    default: [ 66/130] Upgrading systemd-resolved-0: 100% |  38.8 MiB/s | 675.1 KiB |  00m00s
+    default: [ 67/130] Upgrading exfatprogs-0:1.2.8- 100% |  28.2 MiB/s | 259.8 KiB |  00m00s
+    default: [ 68/130] Upgrading expat-0:2.7.0-1.fc4 100% |  22.5 MiB/s | 299.0 KiB |  00m00s
+    default: [ 69/130] Removing NetworkManager-1:1.5 100% | 756.0   B/s |  87.0   B |  00m00s
+    default: [ 70/130] Removing fwupd-0:1.9.28-1.fc4 100% |   3.9 KiB/s | 140.0   B |  00m00s
+    default: [ 71/130] Removing nss-0:3.108.0-1.fc41 100% |   2.7 KiB/s |  19.0   B |  00m00s
+    default: [ 72/130] Removing systemd-udev-0:256.1 100% |  18.8 KiB/s | 576.0   B |  00m00s
+    default: [ 73/130] Removing nss-softokn-0:3.108. 100% |   1.5 KiB/s |  25.0   B |  00m00s
+    default: [ 74/130] Removing pcsc-lite-0:2.3.0-1. 100% |   1.1 KiB/s |  24.0   B |  00m00s
+    default: [ 75/130] Removing elfutils-debuginfod- 100% |   0.0   B/s |  15.0   B |  00m00s
+    default: [ 76/130] Removing NetworkManager-libnm 100% |   5.9 KiB/s |  72.0   B |  00m00s
+    default: [ 77/130] Removing systemd-resolved-0:2 100% |   1.5 KiB/s |  26.0   B |  00m00s
+    default: [ 78/130] Removing dnf5-plugins-0:5.2.1 100% |  16.5 KiB/s | 118.0   B |  00m00s
+    default: [ 79/130] Removing rpm-build-libs-0:4.2 100% |   0.0   B/s |   5.0   B |  00m00s
+    default: [ 80/130] Removing elfutils-libs-0:0.19 100% |   1.3 KiB/s |  12.0   B |  00m00s
+    default: [ 81/130] Removing dnf5-0:5.2.10.0-2.fc 100% |   5.1 KiB/s | 152.0   B |  00m00s
+    default: [ 82/130] Removing vim-minimal-2:9.1.10 100% |   3.9 KiB/s |  16.0   B |  00m00s
+    default: [ 83/130] Removing libdnf5-cli-0:5.2.10 100% |   0.0   B/s |  22.0   B |  00m00s
+    default: [ 84/130] Removing libdnf5-0:5.2.10.0-2 100% |  17.6 KiB/s |  36.0   B |  00m00s
+    default: [ 85/130] Removing libxml2-0:2.12.9-1.f 100% |   8.8 KiB/s |  18.0   B |  00m00s
+    default: [ 86/130] Removing nss-softokn-freebl-0 100% |   6.8 KiB/s |  14.0   B |  00m00s
+    default: [ 87/130] Removing elfutils-libelf-0:0. 100% |   4.9 KiB/s |  15.0   B |  00m00s
+    default: [ 88/130] Removing nss-sysinit-0:3.108. 100% |   0.0   B/s |   7.0   B |  00m00s
+    default: [ 89/130] Removing nss-util-0:3.108.0-1 100% |   0.0   B/s |   6.0   B |  00m00s
+    default: [ 90/130] Removing nspr-0:4.36.0-3.fc41 100% |   2.3 KiB/s |  12.0   B |  00m00s
+    default: [ 91/130] Removing libxmlb-0:0.3.21-1.f 100% |   0.0   B/s |  15.0   B |  00m00s
+    default: [ 92/130] Removing expat-0:2.6.4-1.fc41 100% |   2.3 KiB/s |  14.0   B |  00m00s
+    default: [ 93/130] Removing pcsc-lite-libs-0:2.3 100% |   8.8 KiB/s |   9.0   B |  00m00s
+    default: [ 94/130] Removing exfatprogs-0:1.2.7-1 100% |  14.2 KiB/s |  29.0   B |  00m00s
+    default: [ 95/130] Removing grub2-pc-1:2.12-15.f 100% |   0.0   B/s |   4.0   B |  00m00s
+    default: [ 96/130] Removing grub2-pc-modules-1:2 100% | 148.9 KiB/s | 305.0   B |  00m00s
+    default: [ 97/130] Removing wget2-wget-0:2.2.0-1 100% |   2.0 KiB/s |   2.0   B |  00m00s
+    default: [ 98/130] Removing vim-default-editor-2 100% | 444.0   B/s |   4.0   B |  00m00s
+    default: [ 99/130] Removing selinux-policy-0:41. 100% |   1.7 KiB/s |  12.0   B |  00m00s
+    default: [100/130] Removing fedora-release-0:41- 100% |  19.5 KiB/s | 100.0   B |  00m00s
+    default: [101/130] Removing vim-enhanced-2:9.1.1 100% |   0.0   B/s |   7.0   B |  00m00s
+    default: [102/130] Removing wget2-0:2.2.0-1.fc41 100% |   0.0   B/s |  40.0   B |  00m00s
+    default: [103/130] Removing wget2-libs-0:2.2.0-1 100% | 571.0   B/s |   8.0   B |  00m00s
+    default: [104/130] Removing grub2-tools-1:2.12-1 100% | 658.0   B/s |  77.0   B |  00m00s
+    default: [105/130] Removing systemd-0:256.11-1.f 100% | 304.0   B/s |   1.0 KiB |  00m03s
+    default: [106/130] Removing systemd-libs-0:256.1 100% |   5.6 KiB/s |  23.0   B |  00m00s
+    default: [107/130] Removing systemd-pam-0:256.11 100% |   6.3 KiB/s |  13.0   B |  00m00s
+    default: [108/130] Removing grub2-tools-minimal- 100% |  12.7 KiB/s |  26.0   B |  00m00s
+    default: [109/130] Removing json-glib-0:1.10.0-1 100% |  36.1 KiB/s |  74.0   B |  00m00s
+    default: [110/130] Removing glib2-0:2.82.2-1.fc4 100% |  57.6 KiB/s | 177.0   B |  00m00s
+    default: [111/130] Removing rpm-0:4.20.0-1.fc41. 100% |  66.7 KiB/s | 273.0   B |  00m00s
+    default: [112/130] Removing rpm-plugin-selinux-0 100% |   5.9 KiB/s |   6.0   B |  00m00s
+    default: [113/130] Removing vim-common-2:9.1.108 100% | 301.9 KiB/s |   2.4 KiB |  00m00s
+    default: [114/130] Removing fedora-release-commo 100% |  14.2 KiB/s |  29.0   B |  00m00s
+    default: [115/130] Removing fedora-release-ident 100% |   1.0 KiB/s |   1.0   B |  00m00s
+    default: [116/130] Removing vim-data-2:9.1.1081- 100% |   6.8 KiB/s |   7.0   B |  00m00s
+    default: [117/130] Removing vim-filesystem-2:9.1 100% |  16.1 KiB/s |  33.0   B |  00m00s
+    default: [118/130] Removing grub2-common-1:2.12- 100% |  55.7 KiB/s |  57.0   B |  00m00s
+    default: [119/130] Removing selinux-policy-targe 100% | 132.1 KiB/s |   1.7 KiB |  00m00s
+    default: [120/130] Removing elfutils-default-yam 100% | 333.0   B/s |   1.0   B |  00m00s
+    default: [121/130] Removing rpm-libs-0:4.20.0-1. 100% |   4.9 KiB/s |  10.0   B |  00m00s
+    default: [122/130] Removing lua-libs-0:5.4.6-6.f 100% |   7.8 KiB/s |   8.0   B |  00m00s
+    default: [123/130] Removing libzstd-0:1.5.6-2.fc 100% |   7.8 KiB/s |   8.0   B |  00m00s
+    default: [124/130] Removing xxd-2:9.1.1081-1.fc4 100% |   2.3 KiB/s |   7.0   B |  00m00s
+    default: [125/130] Removing zlib-ng-compat-0:2.2 100% |   0.0   B/s |   5.0   B |  00m00s
+    default: [126/130] Removing libidn2-0:2.3.7-2.fc 100% |   0.0   B/s |  39.0   B |  00m00s
+    default: [127/130] Removing glibc-0:2.40-21.fc41 100% |  20.1 KiB/s | 103.0   B |  00m00s
+    default: [128/130] Removing glibc-langpack-en-0: 100% |  60.1 KiB/s | 492.0   B |  00m00s
+    default: [129/130] Removing glibc-gconv-extra-0: 100% | 103.7 KiB/s | 637.0   B |  00m00s
+    default: [130/130] Removing glibc-common-0:2.40- 100% |   0.0   B/s |  52.0   B |  01m00s
+    default: >>> Running post-transaction scriptlet: kernel-core-0:6.13.8-200.fc41.x86_64
+    default: >>> Finished post-transaction scriptlet: kernel-core-0:6.13.8-200.fc41.x86_64
+    default: >>> Scriptlet output:
+    default: >>> grep: warning: stray \ before /
+    default: >>> grep: warning: stray \ before /
+    default: >>> grep: warning: stray \ before /
+    default: >>> grep: warning: stray \ before /
+    default: >>> grep: warning: stray \ before /
+    default: >>> grep: warning: stray \ before /
+    default: >>>
+    default: Complete!
